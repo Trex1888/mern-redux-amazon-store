@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Fluffs Store</title>
+  </head>
+
+  <body>
+    <div class="grid-container">
+      <header class="header">
+        <div class="brand">
+          <button onclick="openMenu()">
+            &#9776;
+          </button>
+          <a href="index.html">Fluff's Cards</a>
+        </div>
+        <div class="header-links">
+          <a href="cart.html">Cart</a>
+          <a href="signin.html">Sign In</a>
+        </div>
+      </header>
+      <aside class="sidebar">
+        <h3>Card Categories</h3>
+        <button class="sidebar-close" onclick="closeMenu()">x</button>
+        <ul>
+          <li>
+            <a href="index.html">Hitters</a>
+          </li>
+          <li>
+            <a href="index.html">Pitchers</a>
+          </li>
+        </ul>
+      </aside>
+      <main class="main">
+        <div class="content">
+          <ul class="products">
+            <li>
+              <div class="product">
+                <img
+                  class="product-image"
+                  src="images/ruth.jpg"
+                  alt="product"
+                />
+                <div class="product-name">
+                  <a href="product.html">Babe Ruth </a>
+                </div>
+                <div class="product-brand">1948 Leaf</div>
+                <div class="product-price">$100</div>
+                <div class="product-rating">9.5/10 Grade</div>
+              </div>
+            </li>
+
+            <li>
+              <div class="product">
+                <img
+                  class="product-image"
+                  src="images/ozzie01topps.jpg"
+                  alt="product"
+                />
+                <div class="product-name">
+                  <a href="product.html">Ozzie Smith </a>
+                </div>
+                <div class="product-brand">2001 Topps</div>
+                <div class="product-price">$85</div>
+                <div class="product-rating">9.8/10 Grade</div>
+              </div>
+            </li>
+
+            <li>
+              <div class="product">
+                <img
+                  class="product-image"
+                  src="images/rickey92score.jpg"
+                  alt="products"
+                />
+                <div class="product-name">
+                  <a href="product.html">Rickey Henderson </a>
+                </div>
+                <div class="product-brand">1992 Score</div>
+                <div class="product-price">$95</div>
+                <div class="product-rating">9.0/10 Grade</div>
+              </div>
+            </li>
+
+            <li>
+              <div class="product">
+                <img
+                  class="product-image"
+                  src="images/ted.61fleer.jpg"
+                  alt="product"
+                />
+                <div class="product-name">
+                  <a href="product.html">Ted Williams </a>
+                </div>
+                <div class="product-brand">1961 Fleer</div>
+                <div class="product-price">$120</div>
+                <div class="product-rating">8.5/10 Grade</div>
+              </div>
+            </li>
+
+            <li>
+              <div class="product">
+                <img
+                  class="product-image"
+                  src="images/gibby68tops.jpg"
+                  alt="product"
+                />
+                <div class="product-name">
+                  <a href="product.html">Bob Gibson </a>
+                </div>
+                <div class="product-brand">1968 Topps</div>
+                <div class="product-price">$99</div>
+                <div class="product-rating">9.2/10 Grade</div>
+              </div>
+            </li>
+
+            <li>
+              <div class="product">
+                <img
+                  class="product-image"
+                  src="images/kenupperdeck.jpg"
+                  alt="product"
+                />
+                <div class="product-name">
+                  <a href="product.html">Ken Griffey Jr. </a>
+                </div>
+                <div class="product-brand">1989 Upper Deck</div>
+                <div class="product-price">$40</div>
+                <div class="product-rating">9.5/10 Grade</div>
+              </div>
+            </li>
+
+            <li>
+              <div class="product">
+                <img
+                  class="product-image"
+                  src="images/ryan.donruss90.jpg"
+                  alt="product"
+                />
+                <div class="product-name">
+                  <a href="product.html">Nolan Ryan </a>
+                </div>
+                <div class="product-brand">1999 Donruss</div>
+                <div class="product-price">$70</div>
+                <div class="product-rating">8.8/10 Grade</div>
+              </div>
+            </li>
+
+            <li>
+              <div class="product">
+                <img
+                  class="product-image"
+                  src="images/trout98topps.jpg"
+                  alt="product"
+                />
+                <div class="product-name">
+                  <a href="product.html">Mike Trout </a>
+                </div>
+                <div class="product-brand">2018 Topps</div>
+                <div class="product-price">$90</div>
+                <div class="product-rating">9.8/10 Grade</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </main>
+      <footer class="footer">
+        All rights reserved.
+      </footer>
+    </div>
+    <script>
+      function openMenu() {
+        document.querySelector(".sidebar").classList.add("open");
+      }
+      function closeMenu() {
+        document.querySelector(".sidebar").classList.remove("open");
+      }
+    </script>
+  </body>
+</html>
