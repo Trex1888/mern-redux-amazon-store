@@ -85,7 +85,7 @@ function ProductsScreen(props) {
     bodyformData.append("image", file);
     setUploading(true);
     axios
-      .post("/api/uploads", bodyformData, {
+      .post("/api/uploads/s3", bodyformData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
