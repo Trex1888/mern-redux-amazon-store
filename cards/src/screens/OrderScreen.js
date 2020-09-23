@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { detailsOrder, payOrder } from "../actions/orderActions";
+import { createOrder, detailsOrder, payOrder } from "../actions/orderActions";
 import PaypalButton from "../components/PaypalButton";
-
 function OrderScreen(props) {
   const orderPay = useSelector((state) => state.orderPay);
   const {
@@ -11,18 +10,14 @@ function OrderScreen(props) {
     success: successPay,
     error: errorPay,
   } = orderPay;
-
   const dispatch = useDispatch();
-
   useEffect(() => {
     if (successPay) {
       props.history.push("/profile");
     } else {
       dispatch(detailsOrder(props.match.params.id));
     }
-    return () => {
-      //
-    };
+    return () => {};
   }, [successPay]);
 
   const handleSuccessPayment = (paymentResult) => {
@@ -33,7 +28,7 @@ function OrderScreen(props) {
   const { loading, order, error } = orderDetails;
 
   return loading ? (
-    <div>Loading...</div>
+    <div>Loading ...</div>
   ) : error ? (
     <div>{error}</div>
   ) : (
@@ -55,12 +50,10 @@ function OrderScreen(props) {
           <div>
             <h3>Payment</h3>
             <div>Payment Method: {order.payment.paymentMethod}</div>
-            <div>
-              {order.isDelivered ? "Paid at " + order.paidAt : "Not Paid."}
-            </div>
+            <div>{order.isPaid ? "Paid at " + order.paidAt : "Not Paid."}</div>
           </div>
           <div>
-            <ul className="order-list-container">
+            <ul className="cart-list-container">
               <li>
                 <h3>Shopping Cart</h3>
                 <div>Price</div>
@@ -70,16 +63,16 @@ function OrderScreen(props) {
               ) : (
                 order.orderItems.map((item) => (
                   <li key={item._id}>
-                    <div className="order-image">
+                    <div className="cart-image">
                       <img src={item.image} alt="product" />
                     </div>
-                    <div className="order-name">
+                    <div className="cart-name">
                       <div>
                         <Link to={"/product/" + item.product}>{item.name}</Link>
                       </div>
                       <div>Qty: {item.qty}</div>
                     </div>
-                    <div className="order-price">${item.price}</div>
+                    <div className="cart-price">${item.price}</div>
                   </li>
                 ))
               )}
@@ -89,6 +82,7 @@ function OrderScreen(props) {
         <div className="placeorder-action">
           <ul>
             <li className="placeorder-actions-payment">
+              {loadingPay && <div>Finishing Payment...</div>}
               {!order.isPaid && (
                 <PaypalButton
                   amount={order.totalPrice}
