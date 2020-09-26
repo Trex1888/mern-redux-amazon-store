@@ -19,7 +19,7 @@ function ProductsScreen(props) {
   const [description, setDescription] = useState("");
   const [uploading, setUploading] = useState(false);
   const productList = useSelector((state) => state.productList);
-  const { loading, products, error } = productList;
+  const { products } = productList;
 
   const productSave = useSelector((state) => state.productSave);
   const {
@@ -29,11 +29,7 @@ function ProductsScreen(props) {
   } = productSave;
 
   const productDelete = useSelector((state) => state.productDelete);
-  const {
-    loading: loadingDelete,
-    success: successDelete,
-    error: errorDelete,
-  } = productDelete;
+  const { success: successDelete } = productDelete;
   const dispatch = useDispatch();
 
   useEffect(() => {
