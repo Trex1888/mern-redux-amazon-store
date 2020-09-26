@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { createOrder, detailsOrder, payOrder } from "../actions/orderActions";
+import { detailsOrder, payOrder } from "../actions/orderActions";
 import PaypalButton from "../components/PaypalButton";
 function OrderScreen(props) {
   const orderPay = useSelector((state) => state.orderPay);
@@ -38,8 +38,8 @@ function OrderScreen(props) {
           <div>
             <h3>Shipping</h3>
             <div>
-              {order.shipping.address}, {order.shipping.city},
-              {order.shipping.postalCode}, {order.shipping.country},
+              {order.shipping.address} {order.shipping.city},
+              {order.shipping.country} {order.shipping.postalCode}
             </div>
             <div>
               {order.isDelivered
