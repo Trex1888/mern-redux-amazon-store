@@ -7,7 +7,7 @@ import {
   deleteProduct,
 } from "../actions/productActions";
 
-function ProductsScreen(props) {
+function ProductsScreen() {
   const [modalVisible, setModalVisible] = useState(false);
   const [id, setId] = useState("");
   const [name, setName] = useState("");
