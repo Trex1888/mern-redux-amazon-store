@@ -19,7 +19,7 @@ function ProductScreen(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!productSaveSuccess) {
+    if (productSaveSuccess) {
       alert("Review Submitted Successfully.");
       setRating(0);
       setComment("");
