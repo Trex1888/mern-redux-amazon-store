@@ -13,8 +13,6 @@ import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderScreen from "./screens/OrderScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import OrdersScreen from "./screens/OrdersScreen";
-// MONGODB_URL=mongodb://localhost/mern
-// MONGODB_URL=mongodb+srv://john:fishman@cluster0.dlyd5.mongodb.net/action?retryWrites=true&w=majority
 
 function App() {
   const userSignin = useSelector((state) => state.userSignin);
